@@ -9,12 +9,14 @@ export default defineConfig({
   plugins: [
     remix({
       presets: [cloudflare()],
+      unstable_ssr: false,
     }),
     tsconfigPaths(),
+    
   ],
-  ssr: {
-    resolve: {
-      externalConditions: ["workerd", "worker"],
-    },
-  },
+  // ssr: {
+  //   resolve: {
+  //     externalConditions: ["workerd", "worker"],
+  //   },
+  // },
 });
